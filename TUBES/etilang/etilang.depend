@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1556023156 source:d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\main.cpp
+	"parent.h"
+	"child.h"
+
+1555851695 source:c:\users\user-pc\documents\github\e-tilang\etilang\main.cpp
+	"parent.h"
+	"child.h"
+	"parent.h"
+	"child.h"
+
+1555547366 source:c:\users\user-pc\documents\github\e-tilang\etilang\operate.cpp
+	"operate.h"
+	<conio.h>
+	"operate.h"
+	<conio.h>
+
+1555600884 c:\users\user-pc\documents\github\e-tilang\etilang\operate.h
+	"parent.h"
+	"relasi.h"
+	"parent.h"
+	"relasi.h"
+
+1555803580 c:\users\user-pc\documents\github\e-tilang\etilang\child.h
+	<iostream>
+	<iostream>
+
+1555801535 c:\users\user-pc\documents\github\e-tilang\etilang\parent.h
+	<iostream>
+	"child.h"
+	<iostream>
+	"child.h"
+
+1555600909 c:\users\user-pc\documents\github\e-tilang\etilang\relasi.h
+	"child.h"
+	"parent.h"
+	<iostream>
+	"child.h"
+	"parent.h"
+	<iostream>
+
+1555600909 D
+
+1555803156 source:c:\users\user-pc\documents\github\e-tilang\etilang\parent.cpp
+	"child.h"
+	"parent.h"
+	"child.h"
+	"parent.h"
+
+1555803580 source:c:\users\user-pc\documents\github\e-tilang\etilang\child.cpp
+	"child.h"
+	"child.h"
+
+1556023053 source:d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\child.cpp
+	"child.h"
+
+1555901188 d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\child.h
+	<iostream>
+
+1556023053 d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\parent.h
+	<iostream>
+	"child.h"
+	"cstdlib"
+
+1556023945 source:d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\parent.cpp
+	"child.h"
+	"parent.h"
+
+1555954646 
+
+1555803580 7d66c88886a7abfdf5c73005fb3318c42216d
+
+1556082466 source:e:\tubes\etilang\child.cpp
+	"child.h"
+
+1556078301 e:\tubes\etilang\child.h
+	<iostream>
+
+1556091426 source:e:\tubes\etilang\main.cpp
+	<windows.h>
+	<conio.h>
+	<cstdlib>
+	<stdlib.h>
+	"parent.h"
+	"child.h"
+
+1556081322 e:\tubes\etilang\parent.h
+	<iostream>
+	"child.h"
+	"cstdlib"
+
+1556085725 source:e:\tubes\etilang\parent.cpp
+	"child.h"
+	"parent.h"
+
