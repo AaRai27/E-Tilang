@@ -11,6 +11,7 @@
 using namespace std;
 
 typedef struct infotype_pelanggar{
+    int no_tilang;
     string nama;
     string kendaraan;
     string no_kendaraan;
@@ -35,8 +36,8 @@ void insertLast(List_pelanggar &L, adr_pelanggar P);
 void deleteFirst(List_pelanggar &L, adr_pelanggar P);
 void deleteLast(List_pelanggar &L, adr_pelanggar &P);
 void deleteAfter(List_pelanggar &L, adr_pelanggar Prec, adr_pelanggar &P);
-adr_pelanggar alokasiPelanggar(string nama, string kendaraan, string no_kendaraan);
-void deallocatePelanggar(adr_pelanggar &P);
+adr_pelanggar alokasiPelanggar(int no_tilang,string nama, string kendaraan, string no_kendaraan);
+void dealokasiPelanggar(adr_pelanggar &P);
 adr_pelanggar searchNomor(List_pelanggar L, string x);
 void printInfo(List_pelanggar L);
 /* Nama : Rayhan Rahmanda ; NIM : 1301184233
