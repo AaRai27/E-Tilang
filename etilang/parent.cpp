@@ -193,14 +193,12 @@ void printInfo(List_pol L){
 int jumlahPelanggaran(List_pol L)
 {
     int banyak = 0;
+    //List_pelanggar ditilang;
     adr_pol P = first(L);
     while(P!=NULL)
     {
-        if(first(L)!=NULL)
-        {
-            banyak++;
-            P = next(P);
-        }
+        banyak = banyak + jumlahmobil(pelanggar(P)) + jumlahmotor(pelanggar(P));
+        P = next(P);
     }
     return banyak;
 }
@@ -251,43 +249,3 @@ void intToBulan(List_pol L,int P){
 }
 
 
-/*int jumlahmobil(List_pol L)
-{
-    int banyak = 0;
-    adr_pol P = first(L);
-    adr_pelanggar
-    while(P!=NULL)
-    {
-            if (info((pelanggar(P)))) == "mobil")
-            {
-                banyak ++;
-            }else
-            {
-                Q = next(Q);
-            }
-        P = next(P);
-    }
-    return banyak;
-}
-int jumlahmotor(List_pol L)
-{
-    int banyak = 0;
-    adr_pol P = first(L);
-    adr_pelanggar Q = first(M);
-    while(P!=NULL)
-    {
-        while (Q != NULL)
-        {
-            if (info(Q).kendaraan == "motor")
-            {
-                banyak ++;
-            }else
-            {
-                Q = next(Q);
-            }
-        }
-        P = next(P);
-    }
-    return banyak;
-}
-*/

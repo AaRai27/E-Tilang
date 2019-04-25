@@ -37,8 +37,7 @@ void printInfo(List_pol L);
 int jumlahPelanggaran(List_pol L);
 /* Nama : Rayhan Rahmanda ; NIM : 1301184233
    Nama : Muhammad Afif Raihan ; NIM : 1301184220*/
-int jumlahmobil(List_pol L);
-int jumlahmotor(List_pol L);
+
 void intToBulan(List_pol L,int P);
 
 #endif // PARENT_H_INCLUDED

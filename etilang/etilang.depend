@@ -3,9 +3,11 @@
 	"parent.h"
 	"child.h"
 
-1555851695 source:c:\users\user-pc\documents\github\e-tilang\etilang\main.cpp
-	"parent.h"
-	"child.h"
+1556201774 source:c:\users\user-pc\documents\github\e-tilang\etilang\main.cpp
+	<windows.h>
+	<conio.h>
+	<cstdlib>
+	<stdlib.h>
 	"parent.h"
 	"child.h"
 
@@ -21,15 +23,13 @@
 	"parent.h"
 	"relasi.h"
 
-1555803580 c:\users\user-pc\documents\github\e-tilang\etilang\child.h
-	<iostream>
+1556201049 c:\users\user-pc\documents\github\e-tilang\etilang\child.h
 	<iostream>
 
-1555801535 c:\users\user-pc\documents\github\e-tilang\etilang\parent.h
+1556201049 c:\users\user-pc\documents\github\e-tilang\etilang\parent.h
 	<iostream>
 	"child.h"
-	<iostream>
-	"child.h"
+	"cstdlib"
 
 1555600909 c:\users\user-pc\documents\github\e-tilang\etilang\relasi.h
 	"child.h"
@@ -41,14 +41,11 @@
 
 1555600909 D
 
-1555803156 source:c:\users\user-pc\documents\github\e-tilang\etilang\parent.cpp
-	"child.h"
-	"parent.h"
+1556201914 source:c:\users\user-pc\documents\github\e-tilang\etilang\parent.cpp
 	"child.h"
 	"parent.h"
 
-1555803580 source:c:\users\user-pc\documents\github\e-tilang\etilang\child.cpp
-	"child.h"
+1556201049 source:c:\users\user-pc\documents\github\e-tilang\etilang\child.cpp
 	"child.h"
 
 1556023053 source:d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\child.cpp

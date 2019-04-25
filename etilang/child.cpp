@@ -38,13 +38,14 @@ void printInfo(List_pelanggar L) {
     }
 }
 
-adr_pelanggar searchNomor(List_pelanggar L, string x) {
+adr_pelanggar searchNomor(List_pelanggar L, infotype_pelanggar x) {
     adr_pelanggar P = first(L);
     while(P != NULL) {
-        if(info(P).no_kendaraan == x) {
+        if(info(P).no_tilang == x.no_tilang) {
             return P;
+        }else{
+            P = next(P);
         }
-        P = next(P);
     }
     return NULL;
 }
@@ -87,7 +88,6 @@ void deleteLast(List_pelanggar &L, adr_pelanggar &P){
         Q = next(Q);
     }
     next(Q) = NULL;
-    delete(P);
 }
 
 
@@ -99,4 +99,58 @@ void deleteAfter(List_pelanggar &L, adr_pelanggar Prec, adr_pelanggar &P){
 void dealokasiPelanggar(adr_pelanggar &P){
     delete P;
 }
+
+
+void deleteIni(List_pelanggar &L, adr_pelanggar prec, adr_pelanggar &dihapus){
+    prec = prev(dihapus);
+    if (first(L)!= last(L)){
+        next(prec) = next(dihapus);;
+        prev(next(dihapus)) = prec;
+        next(dihapus) = NULL;
+    }else{
+        deleteFirst(L,dihapus);
+    }
+}
+
+
+int jumlahmobil(List_pelanggar L)
+{
+    int banyak = 0;
+    adr_pelanggar Q = first(L);
+    while(Q!=NULL)
+    {
+        if (info(Q).kendaraan == "mobil")
+        {
+            banyak ++;
+        }
+        Q = next(Q);
+    }
+    return banyak;
+}
+
+
+int jumlahmotor(List_pelanggar L)
+{
+    int banyak = 0;
+    adr_pelanggar Q = first(L);
+    while(Q!=NULL)
+    {
+        if (info(Q).kendaraan == "motor")
+        {
+            banyak ++;
+        }
+        Q = next(Q);
+    }
+    return banyak;
+}
+
+int jumlahPelanggaranSebulan(List_pelanggar L){
+    int P = jumlahmobil(L);
+    int Q = jumlahmotor(L);
+    return P+Q;
+}
+
+
+
+
 /* Nama : Rayhan Rahmanda ; NIM : 1301184233 */

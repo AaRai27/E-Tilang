@@ -10,25 +10,25 @@ int main()
     List_pol LP;
     List_pelanggar M;
     adr_pol P;
-    adr_pelanggar Q;
+    adr_pelanggar Q,prec;
     adr_pelanggar C;
     createList(LP);
     infotype_pol x;
-    string y;
+    infotype_pelanggar y;
     string nama,kendaraan,no_kendaraan;
     int no_tilang,notil;
     int choice;
     P = alokasiPolisi(1); insertFirst(LP,P);
-    P = alokasiPolisi(2); insertFirst(LP,P);
-    P = alokasiPolisi(3); insertFirst(LP,P);
-    P = alokasiPolisi(4); insertFirst(LP,P);
-    P = alokasiPolisi(5); insertFirst(LP,P);
-    P = alokasiPolisi(6); insertFirst(LP,P);
-    P = alokasiPolisi(7); insertFirst(LP,P);
-    P = alokasiPolisi(9); insertFirst(LP,P);
-    P = alokasiPolisi(10); insertFirst(LP,P);
-    P = alokasiPolisi(11); insertFirst(LP,P);
-    P = alokasiPolisi(12); insertFirst(LP,P);
+    P = alokasiPolisi(2); insertLast(LP,P);
+    P = alokasiPolisi(3); insertLast(LP,P);
+    P = alokasiPolisi(4); insertLast(LP,P);
+    P = alokasiPolisi(5); insertLast(LP,P);
+    P = alokasiPolisi(6); insertLast(LP,P);
+    P = alokasiPolisi(7); insertLast(LP,P);
+    P = alokasiPolisi(9); insertLast(LP,P);
+    P = alokasiPolisi(10); insertLast(LP,P);
+    P = alokasiPolisi(11); insertLast(LP,P);
+    P = alokasiPolisi(12); insertLast(LP,P);
     do {
         cout << "+===================E-Tilang====================+" << endl;
         cout << "+\t                                  \t+" <<endl;
@@ -61,9 +61,10 @@ int main()
         case 2:
             cout<<"Menghapus Data Pada Bulan : "; cin>>x;
             P = searchPol(LP,x);
-            cout<<"Masukkan Nomor Tilang yang ingin di Hapus : "; cin >> y;
+            cout<<"Masukkan Nomor Tilang yang ingin di Hapus : "; cin >> y.no_tilang;
             Q = searchNomor(pelanggar(P),y);
-            cout << "Kasus Dengan Nomor Tilang "<<y<<" Sudah Tuntas "<<endl;
+            cout << "Kasus Dengan Nomor Tilang "<<info(Q).no_tilang<<" Sudah Tuntas "<<endl;
+            deleteIni(pelanggar(P),prec,Q);
             dealokasiPelanggar(Q);
             getche();
             system("CLS");
@@ -78,24 +79,25 @@ int main()
             cout << "Bulan ";
             intToBulan(LP,x);
             P = searchPol(LP,x);
-            cout<<"Masukkan Nomor Tilang Anda : "; cin>>y;
+            cout<<"Masukkan Nomor Tilang Anda : "; cin>>y.no_tilang;
             Q = searchNomor(pelanggar(P),y);
             printInfo(pelanggar(P));
             getche();
             system("CLS");
             break;
         case 5:
-            /*jumlahmobil(LP,M);
-            cout << jumlahmobil(LP)<<endl;
-            jumlahmotor(LP,M);
-            cout << jumlahmotor(LP)<<endl;
-            break;*/
-        case 6:
-            cout << "Cari Banyak Pelanggaaran Pada Bulan (1-12) : ";
-            cin >> x;
+            cout << "Masukkan Bulan : "; cin >> x;
             P = searchPol(LP,x);
-            jumlahPelanggaran(LP);
-            if(jumlahPelanggaran(LP)!=0)
+            cout << "MOBIL : " <<jumlahmobil(pelanggar(P))<<endl;
+            cout << "MOTOR : " <<jumlahmotor(pelanggar(P))<<endl;
+            getche();
+            system("CLS");
+            break;
+        case 6:
+            cout << "Banyak Pelanggaran Pada Tahun ini Adalah : "<<endl;
+            //P = searchPol(LP,x);
+            cout << jumlahPelanggaran(LP);
+            /*if(jumlahPelanggaran(LP)!=0)
             {
                 cout<<"Jumlah Pelanggaran pada Bulan ";
                 switch(info(P)){
@@ -143,7 +145,7 @@ int main()
             else
             {
                 cout<<"Tidak ada Pelanggaran pada Tahun 2019"<<endl;
-            }
+            }*/
             getche();
             system("CLS");
             break;
