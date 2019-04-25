@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <cstdlib>
 #include <stdlib.h>
+#include <ctime>
 #include "parent.h"
 #include "child.h"
 
@@ -18,6 +19,8 @@ int main()
     string nama,kendaraan,no_kendaraan;
     int no_tilang,notil;
     int choice;
+    time_t now = time(0);
+
     P = alokasiPolisi(1); insertFirst(LP,P);
     P = alokasiPolisi(2); insertLast(LP,P);
     P = alokasiPolisi(3); insertLast(LP,P);
@@ -30,6 +33,7 @@ int main()
     P = alokasiPolisi(11); insertLast(LP,P);
     P = alokasiPolisi(12); insertLast(LP,P);
     do {
+        cout << "\t" << ctime(&now);
         cout << "+===================E-Tilang====================+" << endl;
         cout << "+\t                                  \t+" <<endl;
         cout << "+\t1. Input Data Tilang              \t+" <<endl;
@@ -49,7 +53,7 @@ int main()
             cout<<"Bulan Tilang : "; cin>>x;
             //P = alokasiPolisi(x); insertFirst(LP,P);
             no_tilang = rand() % 10000 + 100;
-            cout<<"Nomor Tilang : "<<no_tilang<<endl;
+            cout<<"Nomor Tilang : "<<no_tilang<<" [HARAP DIINGAT BAIK-BAIK]"<<endl;
             cout<<"Pelanggar : "; cin>>nama;
             cout<<"Kendaraan : "; cin>>kendaraan;
             cout<<"No. Kendaraan : "; cin>>no_kendaraan;
@@ -81,7 +85,9 @@ int main()
             P = searchPol(LP,x);
             cout<<"Masukkan Nomor Tilang Anda : "; cin>>y.no_tilang;
             Q = searchNomor(pelanggar(P),y);
-            printInfo(pelanggar(P));
+            cout<<"\t Nama Pelanggar : " <<info(Q).nama<<endl;
+            cout<<"\t Jenis Kendaraan : " <<info(Q).kendaraan<<endl;
+            cout<<"\t Nomor Kendaraan : "<< info(Q).no_kendaraan<<endl;
             getche();
             system("CLS");
             break;

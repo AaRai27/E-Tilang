@@ -119,7 +119,7 @@ int jumlahmobil(List_pelanggar L)
     adr_pelanggar Q = first(L);
     while(Q!=NULL)
     {
-        if (info(Q).kendaraan == "mobil")
+        if ((info(Q).kendaraan == "mobil") || (info(Q).kendaraan == "MOBIL"))
         {
             banyak ++;
         }
@@ -135,7 +135,7 @@ int jumlahmotor(List_pelanggar L)
     adr_pelanggar Q = first(L);
     while(Q!=NULL)
     {
-        if (info(Q).kendaraan == "motor")
+        if ((info(Q).kendaraan == "motor") || (info(Q).kendaraan == "MOTOR"))
         {
             banyak ++;
         }
