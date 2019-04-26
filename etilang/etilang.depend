@@ -3,7 +3,7 @@
 	"parent.h"
 	"child.h"
 
-1556238764 source:c:\users\user-pc\documents\github\e-tilang\etilang\main.cpp
+1556246321 source:c:\users\user-pc\documents\github\e-tilang\etilang\main.cpp
 	<windows.h>
 	<conio.h>
 	<cstdlib>
@@ -46,7 +46,7 @@
 	"child.h"
 	"parent.h"
 
-1556238602 source:c:\users\user-pc\documents\github\e-tilang\etilang\child.cpp
+1556246382 source:c:\users\user-pc\documents\github\e-tilang\etilang\child.cpp
 	"child.h"
 
 1556023053 source:d:\rayhan rahmanda\matkul\struktur data\e-tilang\etilang\child.cpp

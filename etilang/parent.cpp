@@ -3,10 +3,14 @@
 
 void createList(List_pol &L)
 {
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     first(L) = NULL;
 };
 void insertFirst(List_pol &L, adr_pol P)
 {
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     if (P == NULL){
         first(L) = P;
     }else{
@@ -15,6 +19,8 @@ void insertFirst(List_pol &L, adr_pol P)
     }
 }
 void insertAfter(List_pol &L, adr_pol Prec, adr_pol P){
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     if (P == NULL){
         insertFirst(L,P);
     }else{
@@ -25,6 +31,8 @@ void insertAfter(List_pol &L, adr_pol Prec, adr_pol P){
 
 void insertLast(List_pol &L, adr_pol P)
 {
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     adr_pol Q = first(L);
     if(Q==NULL)
     {
@@ -40,16 +48,20 @@ void insertLast(List_pol &L, adr_pol P)
 };
 void deleteFirst(List_pol &L, adr_pol P)
 {
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     if(first(L) != NULL){
         P = first(L);
         first(L) = next(P);
-        //deletePolisi(P);
         next(P) = NULL;
+        //deletePolisi(P);
     }
 };
 /* Nama : Rayhan Rahmanda ; NIM : 1301184233 */
 
 void deleteLast(List_pol &L, adr_pol &P){
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     adr_pol Q = first(L);
     while(next(Q) != P){
         Q = next(Q);
@@ -60,6 +72,8 @@ void deleteLast(List_pol &L, adr_pol &P){
 
 
 void deleteAfter(List_pol &L, adr_pol Prec, adr_pol &P){
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     next(P) = next(Prec);
     next(Prec) = P;
 }
@@ -67,6 +81,10 @@ void deleteAfter(List_pol &L, adr_pol Prec, adr_pol &P){
 
 
 adr_pol alokasiPolisi(infotype_pol x){
+    /*  Nama : Rayhan Rahmanda ;
+        NIM : 1301184233
+        Nama : Muhammad Afif Raihan
+        NIM : 1301184220*/
     adr_pol P;
     P = new elmlist_pol;
     info(P) = x;
@@ -76,10 +94,16 @@ adr_pol alokasiPolisi(infotype_pol x){
 }
 
 void dealokasiPolisi(adr_pol &P){
+    /* Nama : Rayhan Rahmanda ;
+    NIM : 1301184233 */
     delete P;
 }
 
 adr_pol searchPol(List_pol L, infotype_pol x){
+    /*  Nama : Rayhan Rahmanda ;
+        NIM : 1301184233
+        Nama : Muhammad Afif Raihan
+        NIM : 1301184220*/
     adr_pol P = first(L);
     do {
         if(info(P) == x) {
@@ -91,6 +115,11 @@ adr_pol searchPol(List_pol L, infotype_pol x){
 }
 
 void printInfo(List_pol L){
+    /*  Nama : Rayhan Rahmanda ;
+        NIM : 1301184233
+        Nama : Muhammad Afif Raihan
+        NIM : 1301184220*/
+
     adr_pol P = first(L);
    /* if(first(L)!=NULL) {
         do {
@@ -188,10 +217,12 @@ void printInfo(List_pol L){
     }
     cout << "================================"<<endl;
 }
-/* Nama : Muhammad Afif Raihan ; NIM : 1301184220 */
+
 
 int jumlahPelanggaran(List_pol L)
 {
+    /*Nama : Muhammad Afif Raihan
+      NIM : 1301184220*/
     int banyak = 0;
     //List_pelanggar ditilang;
     adr_pol P = first(L);
@@ -202,10 +233,12 @@ int jumlahPelanggaran(List_pol L)
     }
     return banyak;
 }
-/* Nama : Rayhan Rahmanda ; NIM : 1301184233 */
+
 
 
 void intToBulan(List_pol L,int P){
+    /*Nama : Muhammad Afif Raihan
+      NIM : 1301184220*/
     switch(P){
                 case 1 :
                     cout << "Januari"<<endl;

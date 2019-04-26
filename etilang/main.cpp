@@ -50,7 +50,7 @@ int main()
         cout<<endl;
         switch(choice) {
         case 1:
-            cout<<"Bulan Tilang : "; cin>>x;
+            cout<<"Bulan Tilang (1-12) : "; cin>>x;
             //P = alokasiPolisi(x); insertFirst(LP,P);
             no_tilang = rand() % 10000 + 100;
             cout<<"Nomor Tilang : "<<no_tilang<<" [HARAP DIINGAT BAIK-BAIK]"<<endl;
@@ -100,7 +100,7 @@ int main()
                 default :
                     cout << "Masukan Kasus : ";
                     cin >> kasus;
-                    cout << "Denda : ";
+                    cout << "Denda : Rp.";
                     cin >>denda;
                 }
             P = searchPol(LP,x);
@@ -131,23 +131,19 @@ int main()
             P = searchPol(LP,x);
             cout<<"Masukkan Nomor Tilang Anda : "; cin>>y.no_tilang;
             Q = searchNomor(pelanggar(P),y);
-            if (info(Q).no_tilang == y.no_tilang){
-                cout<<"\t Nama Pelanggar : " <<info(Q).nama<<endl;
-                cout<<"\t Jenis Kendaraan : " <<info(Q).kendaraan<<endl;
-                cout<<"\t Nomor Kendaraan : "<< info(Q).no_kendaraan<<endl;
-                cout<<"\t Kasus Pelanggaran : "<< info(Q).kasus<<endl;
-                cout<<"\t Denda Yang Harus Dibayarkan : "<< info(Q).denda<<endl;
-            }else{
-                cout << "Data Tidak Ditemukan"<<endl;
-            }
+            cout<<"\t Nama Pelanggar : " <<info(Q).nama<<endl;
+            cout<<"\t Jenis Kendaraan : " <<info(Q).kendaraan<<endl;
+            cout<<"\t Nomor Kendaraan : "<< info(Q).no_kendaraan<<endl;
+            cout<<"\t Kasus Pelanggaran : "<< info(Q).kasus<<endl;
+            cout<<"\t Denda Yang Harus Dibayarkan : Rp."<< info(Q).denda<<endl;
             getche();
             system("CLS");
             break;
         case 5:
             cout << "Masukkan Bulan : "; cin >> x;
             P = searchPol(LP,x);
-            cout << "MOBIL : " <<jumlahmobil(pelanggar(P))<<endl;
-            cout << "MOTOR : " <<jumlahmotor(pelanggar(P))<<endl;
+            cout << "RODA EMPAT : " <<jumlahmobil(pelanggar(P))<<endl;
+            cout << "RODA DUA : " <<jumlahmotor(pelanggar(P))<<endl;
             getche();
             system("CLS");
             break;
