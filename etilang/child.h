@@ -15,6 +15,8 @@ typedef struct infotype_pelanggar{
     string nama;
     string kendaraan;
     string no_kendaraan;
+    string kasus;
+    string denda;
 };
 
 typedef struct elmlist_pelanggar *adr_pelanggar;
@@ -36,7 +38,7 @@ void insertLast(List_pelanggar &L, adr_pelanggar P);
 void deleteFirst(List_pelanggar &L, adr_pelanggar P);
 void deleteLast(List_pelanggar &L, adr_pelanggar &P);
 void deleteAfter(List_pelanggar &L, adr_pelanggar Prec, adr_pelanggar &P);
-adr_pelanggar alokasiPelanggar(int no_tilang,string nama, string kendaraan, string no_kendaraan);
+adr_pelanggar alokasiPelanggar(int no_tilang,string nama, string kendaraan, string no_kendaraan,string kasus,string denda);
 void dealokasiPelanggar(adr_pelanggar &P);
 adr_pelanggar searchNomor(List_pelanggar L, infotype_pelanggar x);
 void printInfo(List_pelanggar L);

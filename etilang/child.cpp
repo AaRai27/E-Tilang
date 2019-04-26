@@ -5,12 +5,14 @@ void createList(List_pelanggar &L) {
     last(L) = NULL;
 }
 
-adr_pelanggar alokasiPelanggar(int no_tilang, string nama, string kendaraan, string no_kendaraan) {
+adr_pelanggar alokasiPelanggar(int no_tilang, string nama, string kendaraan, string no_kendaraan, string kasus,string denda) {
     adr_pelanggar P = new elmlist_pelanggar;
     info(P).no_tilang = no_tilang;
     info(P).nama = nama;
     info(P).kendaraan = kendaraan;
     info(P).no_kendaraan = no_kendaraan;
+    info(P).kasus = kasus;
+    info(P).denda = denda;
     next(P) = NULL;
     prev(P) = NULL;
     return P;
@@ -33,7 +35,9 @@ void printInfo(List_pelanggar L) {
         cout<<"\t Nomor Tilang : "<<info(P).no_tilang<<endl;
         cout<<"\t Pelanggar : "<<info(P).nama<<endl;
         cout<<"\t Kendaraan : "<<info(P).kendaraan<<endl;
-        cout<<"\t No. Kendaraan : "<<info(P).no_kendaraan<<endl<<endl;
+        cout<<"\t No. Kendaraan : "<<info(P).no_kendaraan<<endl;
+        cout<<"\t Kasus Pelanggaran : "<<info(P).kasus<<endl;
+        cout<<"\t Denda Yang Harus Dibayarkan : "<<info(P).denda<<endl<<endl;
         P = next(P);
     }
 }

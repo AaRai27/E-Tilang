@@ -16,8 +16,8 @@ int main()
     createList(LP);
     infotype_pol x;
     infotype_pelanggar y;
-    string nama,kendaraan,no_kendaraan;
-    int no_tilang,notil;
+    string nama,kendaraan,no_kendaraan,kasus,denda;
+    int no_tilang,notil,no_kasus;
     int choice;
     time_t now = time(0);
 
@@ -57,8 +57,54 @@ int main()
             cout<<"Pelanggar : "; cin>>nama;
             cout<<"Kendaraan : "; cin>>kendaraan;
             cout<<"No. Kendaraan : "; cin>>no_kendaraan;
+            cout <<"Kasus Pelanggaran : "<<endl;
+                cout << "\t1. Tidak Pakai Helm " <<endl;
+                cout << "\t2. Menerobos lampu merah   " <<endl;
+                cout << "\t3. Surat-Surat Tidak Lengkap " <<endl;
+                cout << "\t4. Melanggar Rambu Lalu Lintas  " <<endl;
+                cout << "\t5. Penumpang Berlebih \t" <<endl;
+                cout << "\t6. Bagian Kendaraan Tidak Lengkap " <<endl;
+                cout << "\t7. Melawan Arus Lalu Lintas  " <<endl;
+                cout << "\t0. Pelanggaran Lainya"<<endl;
+                cout << "Masukkan Kasus Pelanggaran : ";
+                cin >> no_kasus;
+                switch(no_kasus){
+                case 1:
+                    kasus = "Tidak Pakai Helm";
+                    denda = "300.000";
+                    break;
+                case 2:
+                    kasus = "Menerobos lampu merah";
+                    denda = "500.000";
+                    break;
+                case 3:
+                    kasus = "Surat-Surat Tidak Lengkap";
+                    denda = "1.000.000";
+                    break;
+                case 4:
+                    kasus = "Melanggar Rambu Lalu Lintas";
+                    denda = "700.000";
+                    break;
+                case 5:
+                    kasus = "Penumpang Berlebih";
+                    denda = "500.000";
+                    break;
+                case 6:
+                    kasus = "Bagian Kendaraan Tidak Lengkap";
+                    denda = "1.000.000";
+                    break;
+                case 7:
+                    kasus = "Melawan Arus Lalu Lintas";
+                    denda = "400.000";
+                    break;
+                default :
+                    cout << "Masukan Kasus : ";
+                    cin >> kasus;
+                    cout << "Denda : ";
+                    cin >>denda;
+                }
             P = searchPol(LP,x);
-            C = alokasiPelanggar(no_tilang,nama,kendaraan,no_kendaraan);
+            C = alokasiPelanggar(no_tilang,nama,kendaraan,no_kendaraan,kasus,denda);
             insertFirst(pelanggar(P),C);
             system("CLS");
             break;
@@ -85,9 +131,15 @@ int main()
             P = searchPol(LP,x);
             cout<<"Masukkan Nomor Tilang Anda : "; cin>>y.no_tilang;
             Q = searchNomor(pelanggar(P),y);
-            cout<<"\t Nama Pelanggar : " <<info(Q).nama<<endl;
-            cout<<"\t Jenis Kendaraan : " <<info(Q).kendaraan<<endl;
-            cout<<"\t Nomor Kendaraan : "<< info(Q).no_kendaraan<<endl;
+            if (info(Q).no_tilang == y.no_tilang){
+                cout<<"\t Nama Pelanggar : " <<info(Q).nama<<endl;
+                cout<<"\t Jenis Kendaraan : " <<info(Q).kendaraan<<endl;
+                cout<<"\t Nomor Kendaraan : "<< info(Q).no_kendaraan<<endl;
+                cout<<"\t Kasus Pelanggaran : "<< info(Q).kasus<<endl;
+                cout<<"\t Denda Yang Harus Dibayarkan : "<< info(Q).denda<<endl;
+            }else{
+                cout << "Data Tidak Ditemukan"<<endl;
+            }
             getche();
             system("CLS");
             break;
@@ -100,58 +152,9 @@ int main()
             system("CLS");
             break;
         case 6:
-            cout << "Banyak Pelanggaran Pada Tahun ini Adalah : "<<endl;
-            //P = searchPol(LP,x);
-            cout << jumlahPelanggaran(LP);
-            /*if(jumlahPelanggaran(LP)!=0)
-            {
-                cout<<"Jumlah Pelanggaran pada Bulan ";
-                switch(info(P)){
-                case 1 :
-                    cout << "Januari"<<endl;
-                    break;
-                case 2 :
-                    cout << "Februari"<<endl;
-                    break;
-                case 3 :
-                    cout << "Maret"<<endl;
-                    break;
-                case 4 :
-                    cout << "April"<<endl;
-                    break;
-                case 5 :
-                    cout << "Mei"<<endl;
-                    break;
-                case 6 :
-                    cout << "Juni"<<endl;
-                    break;
-                case 7 :
-                    cout << "Juli"<<endl;
-                    break;
-                 case 8 :
-                    cout << "Agustus"<<endl;
-                    break;
-                 case 9 :
-                    cout << "September"<<endl;
-                    break;
-                 case 10 :
-                    cout << "Oktober"<<endl;
-                    break;
-                 case 11 :
-                    cout << "November"<<endl;
-                    break;
-                 case 12 :
-                    cout << "Desember"<<endl;
-                    break;
-                default:
-                    cout << "Bulan Tidak Ada"<<endl;
-            }
-                cout<< " Tahun 2019 yaitu "<<jumlahPelanggaran(LP)<<endl;
-            }
-            else
-            {
-                cout<<"Tidak ada Pelanggaran pada Tahun 2019"<<endl;
-            }*/
+            cout << "Banyak Pelanggaran Pada Tahun ini Adalah : ";
+            cout << jumlahPelanggaran(LP) << " Kasus Pelanggaran"<<endl<<endl;
+            printInfo(LP);
             getche();
             system("CLS");
             break;
